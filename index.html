@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3X Cut - Barber Shop</title>
+<style>
+  body {font-family: 'Arial', sans-serif; margin:0; padding:0; background:#f2f2f2;}
+  header {background:#111; color:white; padding:20px; text-align:center;}
+  header h1 {margin:0; font-size:2rem;}
+  nav {text-align:center; margin-top:10px;}
+  nav button {padding:10px 20px; margin:5px; cursor:pointer; border:none; background:#ff6600; color:white; border-radius:5px;}
+  section {padding:40px 20px; text-align:center;}
+  .section-title {font-size:1.5rem; margin-bottom:20px;}
+  .service-list {list-style:none; padding:0;}
+  .service-list li {background:white; margin:10px auto; padding:15px; max-width:400px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.2);}
+  footer {background:#111; color:white; text-align:center; padding:20px;}
+  a {color:#ff6600; text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1 id="businessName">3X Cut</h1>
+  <p id="businessDesc">Barber Shop</p>
+  <nav>
+    <button onclick="switchLanguage()">বাংলা / English</button>
+  </nav>
+</header>
+
+<section id="services">
+  <h2 class="section-title">Our Services</h2>
+  <ul class="service-list" id="serviceList">
+    <li>Hair Cut</li>
+    <li>Shaving</li>
+    <li>Beard Styling</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <p>Email: <a href="mailto:pritombaidya0188@gmail.com">pritombaidya0188@gmail.com</a></p>
+  <p>Facebook: <a href="https://www.facebook.com/share/16Dehq8a7N/" target="_blank">Visit our page</a></p>
+</section>
+
+<footer>
+  &copy; 2025 3X Cut. All Rights Reserved.
+</footer>
+
+<script>
+let isBangla = false;
+
+function switchLanguage() {
+  if(isBangla) {
+    document.getElementById('businessName').innerText = '3X Cut';
+    document.getElementById('businessDesc').innerText = 'Barber Shop';
+    document.querySelector('.section-title').innerText = 'Our Services';
+    const services = ['Hair Cut', 'Shaving', 'Beard Styling'];
+    const serviceList = document.getElementById('serviceList');
+    serviceList.innerHTML = '';
+    services.forEach(s => { let li = document.createElement('li'); li.innerText = s; serviceList.appendChild(li); });
+    document.querySelector('#contact h2').innerText = 'Contact Us';
+  } else {
+    document.getElementById('businessName').innerText = '৩X কাট';
+    document.getElementById('businessDesc').innerText = 'বার্বার শপ';
+    document.querySelector('.section-title').innerText = 'আমাদের সেবা';
+    const services = ['হেয়ার কাট', 'সেভিং', 'দাড়ি স্টাইলিং'];
+    const serviceList = document.getElementById('serviceList');
+    serviceList
